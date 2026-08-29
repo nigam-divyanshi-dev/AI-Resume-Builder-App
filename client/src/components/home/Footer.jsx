@@ -17,7 +17,7 @@ const Footer = () => {
                 
                 {/* Project Description */}
                 <p className="text-center max-w-xl text-sm font-normal leading-relaxed text-slate-600">
-                    Empowering job seekers worldwide to land their dream roles. Build, customize, and download professional, AI-optimized resumes in minutes.
+                    Empowering job seekers worldwide to land their dream roles. <br /> Build, customize, and download professional, AI-optimized resumes in minutes.
                 </p>
                 
             </div>
