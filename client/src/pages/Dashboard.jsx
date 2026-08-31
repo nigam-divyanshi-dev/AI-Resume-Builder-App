@@ -9,13 +9,15 @@ const Dashboard = () => {
   const [allResumes, setAllResumes] = useState([])
   const [showCreateResume, setShowCreateResume] = useState(false)
   const [showUploadResume, setShowUploadResume] = useState(false)
+  const [editResumeId, setEditResumeId] = useState('')
+  
   const [title, setTitle] = useState('')
   const [resume, setResume] = useState(null)
   const navigate = useNavigate()
 
   const loadAllResumes = async () => {
-    // Loaded 3 instances of dummy data temporarily so you can see the grid layout working
-    setAllResumes([dummyResumeData, dummyResumeData, dummyResumeData])
+    // Load all dummy resumes without duplication
+    setAllResumes(dummyResumeData)
   }
 
   const createResume = async (event) => {
@@ -27,8 +29,23 @@ const Dashboard = () => {
     event.preventDefault()
     setShowUploadResume(false)
     navigate(`/app/builder/res123`)
-  }  
-
+  }
+  const editTitle = async (event) => {
+    event.preventDefault()
+    // Update the resume title in the list
+    const updatedResumes = allResumes.map((res, idx) => 
+      idx === allResumes.findIndex(r => r._id === editResumeId) ? { ...res, title } : res
+    )
+    setAllResumes(updatedResumes)
+    setEditResumeId('')
+    setTitle('')
+  } 
+  const deleteResume = async (resumeId) => {
+    const confirm=window.confirm('Are you sure you want to delete this resume?')
+    if(confirm){
+      setAllResumes(prev => prev.filter(resume => resume._id !== resumeId))
+    }
+  }
 
   useEffect(() => {
     const initResumes = async () => {
@@ -103,20 +120,17 @@ const Dashboard = () => {
                 </p>
                 
                 {/* Hover Action Buttons */}
-                <div className='absolute top-1 right-1 group-hover:flex items-center hidden gap-1'>
-                  <Trash2 
+                <div onClick={(e) => e.stopPropagation()} className='absolute top-1 right-1 group-hover:flex items-center hidden gap-1'>
+                  <Trash2 onClick={() => deleteResume(resume._id)} 
                     className="size-7 p-1 hover:bg-white/50 rounded text-slate-700 transition-colors cursor-pointer" 
-                    onClick={(e) => { 
-                        e.stopPropagation(); 
-                        // TODO: Hook up delete functionality
-                    }} 
+                     
                   />
-                  <Pencil 
-                    className="size-7 p-1 hover:bg-white/50 rounded text-slate-700 transition-colors cursor-pointer" 
-                    onClick={(e) => { 
-                        e.stopPropagation(); 
-                        // TODO: Hook up title edit functionality
-                    }} 
+                  <Pencil onClick={(e) => {
+                    e.stopPropagation();
+                    setEditResumeId(resume._id);
+                    setTitle(resume.title);
+                  }}
+                    className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors cursor-pointer" 
                   />
                 </div>
               </button>
@@ -206,6 +220,38 @@ const Dashboard = () => {
 
         )
         }
+
+        {editResumeId && (
+          <form 
+            onSubmit={editTitle} 
+            className='fixed inset-0 bg-black/70 backdrop-blur bg-opacity-50 z-10 flex items-center justify-center' 
+            onClick={() => setEditResumeId('')}
+          >
+            <div onClick={e => e.stopPropagation()} className='relative bg-slate-50 border shadow-md rounded-lg w-full max-w-sm p-6'>
+              <h2 className='text-xl font-bold mb-4'>Edit Resume Title</h2>
+              
+              <input onChange={(e) => setTitle(e.target.value)} value={title}
+                type="text" 
+                placeholder='Enter resume title' 
+                className='w-full px-4 py-2 mb-4 outline-none rounded border border-slate-300 focus:border-green-600 focus:ring-1 focus:ring-green-600 transition-all' 
+                required
+              />
+              
+              <button 
+                type="submit" 
+                className='w-full py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors font-medium'
+              >
+                Update
+              </button>
+              
+              <X 
+                className='absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer transition-colors size-5' 
+                onClick={() => setEditResumeId('')} 
+              />
+            </div>
+          </form>
+        )}
+
       </div>
     </div>
   )
