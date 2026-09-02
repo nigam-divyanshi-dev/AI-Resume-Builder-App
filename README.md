@@ -499,8 +499,8 @@ B.Tech Student | Full-Stack Developer | AI Enthusiast
 
 ### Connect With Me
 
-* GitHub: [Add your GitHub profile](https://github.com/nigam-divyanshi-dev)
-* LinkedIn: [Add your LinkedIn profile](https://www.linkedin.com/in/divyanshi-nigam-56902528a/)
+* GitHub: [](https://github.com/nigam-divyanshi-dev)
+* LinkedIn: [](https://www.linkedin.com/in/divyanshi-nigam-56902528a/)
 
 ---
 
