@@ -1,25 +1,31 @@
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { dummyResumeData } from '../assets/assets'
 import ResumePreview from '../components/ResumePreview'
 import Loader from '../components/Loader'
 import { ArrowLeftIcon } from 'lucide-react'
-
+import api from '../configs/api'
 
 const Preview = () => {
   const { resumeId } = useParams()
+
   const [isLoading, setIsLoading] = useState(true)
   const [resumeData, setResumeData] = useState(null)
 
   const loadResume = async () => {
-      setResumeData(dummyResumeData.find(resume => resume._id === resumeId || null))
+    try {
+      const { data } = await api.get('/api/resumes/public/' + resumeId)
+      setResumeData(data.resume)
+    } catch (error) {
+      console.log(error.message);
+    }finally{
       setIsLoading(false)
     }
+  }
 
   useEffect(()=>{
     loadResume()
   },[])
-
   return resumeData ? (
     <div className='bg-slate-100'>
       <div className='max-w-3xl mx-auto py-10'>
