@@ -10,6 +10,7 @@
 An AI-powered full-stack Resume Builder that helps users create professional, ATS-friendly resumes quickly. The application provides customizable resume templates, AI-powered content enhancement, resume parsing, profile management, and public resume sharing.
 
 **Live Deployment:** [https://ai-powered-interview-preparation-re.vercel.app/login](https://ai-resume-builder-app-liart.vercel.app/)
+
 **GitHub Repository:** [https://github.com/nigam-divyanshi-dev/AI-Resume-Builder-App](https://github.com/nigam-divyanshi-dev/AI-Resume-Builder-App)
 
 ## 🌟 Features
