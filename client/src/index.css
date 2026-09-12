@@ -17,3 +17,346 @@
     @apply outline-none focus:ring border border-gray-300 focus:ring-blue-500 focus:border-blue-500 rounded-lg resize-none;
   }
 }
+
+  html {
+    background: #f4fbf7;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  html.dark {
+    background: #081a14;
+    color-scheme: dark;
+  }
+
+  html.dark body {
+    background: #081a14;
+    color: #e5f7ed;
+  }
+
+  html.dark .app-shell,
+  html.dark .bg-gray-50 {
+    background-color: #081a14 !important;
+  }
+
+  html.dark .bg-white {
+    background-color: #10251b !important;
+  }
+
+  html.dark .bg-gray-100 {
+    background-color: #19372a !important;
+  }
+
+  html.dark .text-gray-900,
+  html.dark .text-gray-800,
+  html.dark .text-gray-700,
+  html.dark .text-gray-600,
+  html.dark .text-gray-500,
+  html.dark .text-slate-800,
+  html.dark .text-slate-700,
+  html.dark .text-slate-600,
+  html.dark .text-slate-500,
+  html.dark .text-slate-400 {
+    color: #d1d5db !important;
+  }
+
+  html.dark .border-gray-200,
+  html.dark .border-gray-300,
+  html.dark .border-slate-200,
+  html.dark .border-slate-300 {
+    border-color: #315342 !important;
+  }
+
+  html.dark .app-shell h1,
+  html.dark .app-shell h2,
+  html.dark .app-shell h3,
+  html.dark .app-shell strong {
+    color: #e8fff2 !important;
+  }
+
+  html.dark .app-shell p {
+    color: #b8d9c6 !important;
+  }
+
+  html.dark .app-shell a {
+    color: #a4edc4;
+  }
+
+  html.dark .app-shell aside a {
+    background-color: transparent !important;
+    color: #a9d8bc !important;
+  }
+
+  html.dark .app-shell aside a:first-child {
+    background-color: #1d6044 !important;
+    color: #e5fff0 !important;
+  }
+
+  html.dark .app-shell aside > nav > div {
+    border-color: #2c6449 !important;
+    background: linear-gradient(145deg, #163d2c, #1c5039) !important;
+  }
+
+  html.dark .app-shell nav span {
+    color: #d8f7e4 !important;
+  }
+
+  html.dark .app-dashboard h1,
+  html.dark .app-dashboard h2,
+  html.dark .app-dashboard h3 {
+    color: #effff5 !important;
+  }
+
+  html.dark .app-dashboard p,
+  html.dark .app-dashboard .dashboard-action p,
+  html.dark .app-dashboard .resume-card-footer,
+  html.dark .app-dashboard .resume-card-footer span {
+    color: #bfe6ce !important;
+  }
+
+  html.dark .app-dashboard .dashboard-action p:first-of-type,
+  html.dark .app-dashboard .resume-card > p {
+    color: #effff5 !important;
+  }
+
+  html.dark .app-dashboard .dashboard-action > span {
+    color: #9cf0bd !important;
+  }
+
+  html.dark input,
+  html.dark textarea,
+  html.dark select {
+    background-color: #10251b !important;
+    border-color: #4b5563 !important;
+    color: #f3f4f6 !important;
+  }
+
+  html.dark input::placeholder,
+  html.dark textarea::placeholder {
+    color: #9ca3af;
+  }
+
+  html.dark .app-shell aside,
+  html.dark .app-shell nav,
+  html.dark .app-shell header {
+    border-color: #273449 !important;
+  }
+
+  html.dark .app-shell aside {
+    background-color: #10251b !important;
+  }
+
+  html.dark .app-shell .app-dashboard {
+    color: #e5e7eb;
+  }
+
+  html.dark .app-dashboard .resume-card {
+    background: linear-gradient(135deg, #123b2a, #15553a) !important;
+    border-color: #267e58 !important;
+  }
+
+  html.dark .app-dashboard .dashboard-action {
+    border-color: #267e58 !important;
+    background: linear-gradient(135deg, #123b2a, #1b6042) !important;
+  }
+
+  html.dark .app-dashboard .dashboard-action.upload-action {
+    border-color: #31916a !important;
+    background: linear-gradient(135deg, #164c36, #20704d) !important;
+  }
+
+  html.dark .app-dashboard .resume-card-footer {
+    background: #10251b !important;
+    border-color: #315342 !important;
+    color: #b8d9c6 !important;
+  }
+
+  html.dark .app-dashboard .resume-card p {
+    color: #e8fff2 !important;
+  }
+
+  html.dark #resume-preview,
+  html.dark #resume-preview .bg-white {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+  }
+
+  html.dark #resume-preview .text-gray-900,
+  html.dark #resume-preview .text-gray-800,
+  html.dark #resume-preview .text-gray-700,
+  html.dark #resume-preview .text-gray-600,
+  html.dark #resume-preview .text-gray-500 {
+    color: revert !important;
+  }
+
+  /* Keep the exported resume document readable while the editor is dark. */
+  html.dark .app-shell #resume-preview,
+  html.dark .app-shell #resume-preview * {
+    color: #27272a !important;
+  }
+
+  html.dark .app-shell #resume-preview .text-zinc-950 {
+    color: #09090b !important;
+  }
+
+  html.dark .app-shell #resume-preview .text-zinc-900,
+  html.dark .app-shell #resume-preview .text-zinc-800 {
+    color: #18181b !important;
+  }
+
+  html.dark .app-shell #resume-preview .text-zinc-700 {
+    color: #3f3f46 !important;
+  }
+
+  html.dark .app-shell #resume-preview .text-zinc-600 {
+    color: #52525b !important;
+  }
+
+  html.dark .app-shell #resume-preview .text-zinc-500 {
+    color: #71717a !important;
+  }
+
+  html.dark .app-shell #resume-preview [class*='border-zinc'],
+  html.dark .app-shell #resume-preview hr {
+    border-color: #d4d4d8 !important;
+  }
+
+    .home-page.theme-dark {
+      background: #081a14 !important;
+      color: #ecfff3 !important;
+    }
+
+    .home-page.theme-dark > header {
+      border-color: #275540 !important;
+      background: rgba(16, 37, 27, 0.92) !important;
+      box-shadow: 0 7px 28px rgba(0, 0, 0, 0.18) !important;
+    }
+
+    .home-page.theme-dark nav,
+    .home-page.theme-dark header,
+    .home-page.theme-dark h1,
+    .home-page.theme-dark h2,
+    .home-page.theme-dark h3,
+    .home-page.theme-dark b {
+      color: #ecfff3 !important;
+    }
+
+    .home-page.theme-dark header nav a:not(:first-child),
+    .home-page.theme-dark .theme-toggle {
+      color: #c5e8d1 !important;
+    }
+
+    .home-page.theme-dark header nav a:first-child {
+      background: #1b6243 !important;
+      color: #effff4 !important;
+    }
+
+    .home-page.theme-dark header span,
+    .home-page.theme-dark main p,
+    .home-page.theme-dark footer {
+      color: #bbdfc8 !important;
+    }
+
+    .home-page.theme-dark main > span,
+    .home-page.theme-dark main section > span {
+      opacity: 0.3;
+    }
+
+    .home-page.theme-dark .home-page,
+    .home-page.theme-dark button:not(.theme-toggle) {
+      color: #ecfff3;
+    }
+
+    .home-page.theme-dark main section:first-of-type > div > span {
+      border-color: #327854 !important;
+      background-color: #143a29 !important;
+      color: #b8f1c9 !important;
+    }
+
+    .home-page.theme-dark main section:first-of-type > div > a {
+      color: #ffffff !important;
+    }
+
+    .home-page.theme-dark main section:first-of-type button {
+      border-color: #4e8566 !important;
+      background: #10251b !important;
+      color: #ecfff3 !important;
+    }
+
+    .home-page.theme-dark main section:first-of-type button:first-child {
+      background: #08a957 !important;
+      color: white !important;
+    }
+
+    .home-page.theme-dark #features h2,
+    .home-page.theme-dark #features span {
+      color: #ecfff3 !important;
+    }
+
+    .home-page.theme-dark #features > div:first-child span {
+      background: #32654a !important;
+    }
+
+    .home-page.theme-dark #testimonials h2,
+    .home-page.theme-dark #testimonials h3 {
+      color: #ecfff3 !important;
+    }
+
+    .home-page.theme-dark #testimonials p {
+      color: #bbdfc8 !important;
+    }
+
+    .home-page.theme-dark #testimonials > div:first-child > span,
+    .home-page.theme-dark #testimonials .bg-\[\#d9f9e5\] {
+      background: #194b34 !important;
+      color: #c5f5d3 !important;
+    }
+
+    .home-page.theme-dark #testimonials .hover\:bg-white:hover {
+      background: #10251b !important;
+    }
+
+    .home-process-feature.is-selected h3,
+    .home-process-feature.is-selected .home-process-icon {
+      color: #079653 !important;
+    }
+
+    .home-process-feature:hover {
+      background: #d9f9e5 !important;
+    }
+
+    .home-process-feature:hover h3,
+    .home-process-feature:hover .home-process-icon {
+      color: #079653 !important;
+    }
+
+    .home-page.theme-dark .home-process-feature.is-selected {
+      background: #194b34 !important;
+    }
+
+    .home-page.theme-dark .home-process-feature.is-selected h3,
+    .home-page.theme-dark .home-process-feature.is-selected .home-process-icon {
+      color: #b8f1c9 !important;
+    }
+
+    .home-page.theme-dark .home-process-feature:hover {
+      background: #194b34 !important;
+    }
+
+    .home-page.theme-dark .home-process-feature:hover h3,
+    .home-page.theme-dark .home-process-feature:hover .home-process-icon {
+      color: #b8f1c9 !important;
+    }
+
+    .home-page.theme-dark footer {
+      border-color: #214832 !important;
+      background: #0b2118;
+    }
+
+    .home-page.theme-dark .home-footer p {
+      color: #bbdfc8 !important;
+    }
+
+    .home-page.theme-dark .fixed {
+      background: #10251b !important;
+      color: #ecfff3 !important;
+    }
